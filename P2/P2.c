@@ -4,7 +4,7 @@
 
 #define MAX_TAM 100
 
-void desalocarMemoria(char **matriz, int num_pessoas) // Certo
+void desalocarMemoria(char **matriz, int num_pessoas) 
 {
     for(int i = 0; i < num_pessoas; i++)
     {
@@ -13,7 +13,7 @@ void desalocarMemoria(char **matriz, int num_pessoas) // Certo
     free(matriz);
 }
 
-void desalocarMemoriaInt(int **matriz, int num_pessoas) // Certo
+void desalocarMemoriaInt(int **matriz, int num_pessoas) 
 {
     for(int i = 0; i < num_pessoas; i++)
     {
@@ -22,7 +22,7 @@ void desalocarMemoriaInt(int **matriz, int num_pessoas) // Certo
     free(matriz);
 }
 
-char **alocarMatrizNomes(int num_pessoas) // Certo
+char **alocarMatrizNomes(int num_pessoas) 
 {
     char **matriz_nomes;
     matriz_nomes = (char**)calloc(num_pessoas, sizeof(char*));
@@ -50,7 +50,7 @@ char **alocarMatrizNomes(int num_pessoas) // Certo
     return matriz_nomes;
 }
 
-int **alocarMatrizInimizade(int num_pessoas) // Certo
+int **alocarMatrizInimizade(int num_pessoas) 
 {
     int **matriz_inimizade;
     matriz_inimizade = (int**)calloc(num_pessoas, sizeof(int*));
@@ -78,7 +78,7 @@ int **alocarMatrizInimizade(int num_pessoas) // Certo
     return matriz_inimizade;
 }
 
-void imprimirNomes(char **matriz_nomes, char **matriz_sobrenomes, int num_nomes) // Certo
+void imprimirNomes(char **matriz_nomes, char **matriz_sobrenomes, int num_nomes) 
 {
     for(int i = 0; i < num_nomes; i++)
     {
@@ -86,7 +86,7 @@ void imprimirNomes(char **matriz_nomes, char **matriz_sobrenomes, int num_nomes)
     }
 }
 
-void imprimirInimizadesPrimos(char **matriz_nomes, char **matriz_sobrenomes, int **matriz_inimizade, int num_nomes) // Certo
+void imprimirInimizadesPrimos(char **matriz_nomes, char **matriz_sobrenomes, int **matriz_inimizade, int num_nomes) 
 {
     for(int i = 0; i < num_nomes; i++)
     {
@@ -102,7 +102,7 @@ void imprimirInimizadesPrimos(char **matriz_nomes, char **matriz_sobrenomes, int
     
 }
 
-void alterar_inimizade(int **matriz_inimizade, int num_nomes, char **matriz_nomes) // Eu tinha interpretado essa parte errado na hora da prova, essa é a versão correta:
+void alterar_inimizade(int **matriz_inimizade, int num_nomes, char **matriz_nomes)
 {
     int contador = 0;
     int relacao;
@@ -151,7 +151,7 @@ void alterar_inimizade(int **matriz_inimizade, int num_nomes, char **matriz_nome
     }
 }
 
-void imprimirPossiveisAmigos(int **matriz_inimizade, int num_nomes, char **matriz_nomes, char **matriz_sobrenomes) // Certo
+void imprimirPossiveisAmigos(int **matriz_inimizade, int num_nomes, char **matriz_nomes, char **matriz_sobrenomes) 
 {
     for(int i = 0; i < num_nomes; i++)
     {
@@ -162,7 +162,7 @@ void imprimirPossiveisAmigos(int **matriz_inimizade, int num_nomes, char **matri
             {
                 for(int k = 0; k < num_nomes; k++)
                 {
-                    if(matriz_inimizade[k][j] == 1 && k != i && matriz_inimizade[k][i] != 1) // Tinha esquecido de conferir se eles eram inimigos também
+                    if(matriz_inimizade[k][j] == 1 && k != i && matriz_inimizade[k][i] != 1) 
                     {
                         printf("\t%s %s\n", matriz_nomes[k], matriz_sobrenomes[k]);
                     }
@@ -177,7 +177,7 @@ void ordenarSobrenomes(char **matriz_nomes, char **matriz_sobrenomes, int num_no
     char straux_sobrenomes[MAX_TAM];
     char straux_nomes[MAX_TAM];
 
-    for(int j = 0; j < num_nomes; j++) // Eu tinha esquecido desse for  
+    for(int j = 0; j < num_nomes; j++) 
     {
         for(int i = 0; i < num_nomes-1; i++)
         {
